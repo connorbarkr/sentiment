@@ -1,14 +1,17 @@
 <section>
+
   <span *ngIf="reading">
-    <div class="note-header"><a (click)="toggleView()">a note to {{ user }}</a></div>
-    <div class="note" *ngFor="let note of (notes | async)">
+    <div class="note-header invisible" [@visibility]="readIsVisible" (click)="toggleView()">a note for {{ user }}</div>
+    <div class="note invisible" [@visibility]="readIsVisible" *ngFor="let note of (notes | async)">
+      <div class="input content" contenteditable="false" [ngModel]='(note.description)'></div>
+    </div>
+  </span>
+
+  <span *ngIf="!reading">
+    <div class="note-header invisible" [@visibility]="writeIsVisible" (click)="toggleView()">a note to {{ user }}</div>
+    <div class="note invisible" [@visibility]="writeIsVisible" *ngFor="let note of (notes | async)">
       <div class="input content" contenteditable="true" [ngModel]='(note.description)' (ngModelChange)="updateDescription(note, $event)"></div>
     </div>
   </span>
-  <span *ngIf="!reading">
-    <div class="note-header"><a (click)="toggleView()">a note for {{ user }}</a></div>
-    <div class="note" *ngFor="let note of (notes | async)">
-      <div class="input content" contenteditable="false" [ngModel]='(note.description)' (ngModelChange)="updateDescription(note, $event)"></div>
-    </div>
-  </span>
+
 </section>

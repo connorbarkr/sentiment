@@ -1,16 +1,35 @@
 @import 'src/styles.sass'
 
-input
-  border: none
-  border-bottom: 2px solid #ccc
-  width: 15%
+a
   color: $text-color
-  padding: 5px 5px
-  position: absolute
-  top: 50%
-  left: 50%
-  margin-right: -50%
-  transform: translate(-50%, -50%)
+  text-decoration: none
+
+  &:hover
+    font-weight: 400
+
+.appnote
+  opacity: 0
+
+.password
+  opacity: 0
+
+  input
+    border: none
+    border-bottom: 1px solid #C1C1C1
+    width: 15%
+    color: $text-dark
+    background-color: $background
+    padding: 5px 5px
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-right: -50%
+    transform: translate(-50%, -50%)
+    transition: border-bottom .3s
+
+    &:hover, &:focus
+      outline: none
+      border-bottom: 2px solid $text-dark
 
 .title
   width: 100%
@@ -19,6 +38,7 @@ input
   font-weight: 300
   font-size: 60px
   padding-top: 20px
+  opacity: 0
 
 .footer
   position: fixed
@@ -27,6 +47,8 @@ input
   text-align: center
   padding-bottom: 10px
   bottom: 0
+  opacity: 0
+
   p
     margin: 0
     text-align: center
