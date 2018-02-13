@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class='title'>SENTIMENT</div>
+
+<span *ngIf="!authedUser">
+  <input (keyup.enter)="authenticate(password)" [(ngModel)]="password" type="password" />
+</span>
+
+<span *ngIf="authedUser">
+  <app-notes [user]="authedUser"></app-notes>
+</span>
+
+<div class='footer'>
+  <p>© Connor Barker 2018. Made with love.</p>
+</div>

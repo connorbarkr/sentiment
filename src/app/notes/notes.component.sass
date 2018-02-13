@@ -1,0 +1,41 @@
+@import 'src/styles.sass'
+
+section
+  padding: 1em
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-right: -50%
+  transform: translate(-50%, -50%)
+
+  p
+    color: $text-dark
+
+.note-header
+  color: #E60000
+  font-weight: 300
+  width: 100%
+  text-align: center
+  flex: auto auto
+  font-size: 20px
+
+.input
+  transition: filter 1s
+  border: none
+  outline: none
+  width: 100%
+  overflow: visible
+  resize: none
+  &:hover, &:focus
+    filter: brightness(90%)
+
+.content
+  padding: 5px 20px 15px
+
+.note
+  transition: ease-out 0.25s
+  flex: auto auto
+  margin: 20px
+  min-width: 200px
+  max-width: 300px
+  height: auto

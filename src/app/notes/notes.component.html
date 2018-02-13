@@ -1,0 +1,14 @@
+<section>
+  <span *ngIf="reading">
+    <div class="note-header"><a (click)="toggleView()">a note to {{ user }}</a></div>
+    <div class="note" *ngFor="let note of (notes | async)">
+      <div class="input content" contenteditable="true" [ngModel]='(note.description)' (ngModelChange)="updateDescription(note, $event)"></div>
+    </div>
+  </span>
+  <span *ngIf="!reading">
+    <div class="note-header"><a (click)="toggleView()">a note for {{ user }}</a></div>
+    <div class="note" *ngFor="let note of (notes | async)">
+      <div class="input content" contenteditable="false" [ngModel]='(note.description)' (ngModelChange)="updateDescription(note, $event)"></div>
+    </div>
+  </span>
+</section>
