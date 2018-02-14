@@ -28,7 +28,6 @@ export class AppComponent {
   authedUser: string = '';
   password_rea: string = '794bfa57bb763388d961a98aa5b9f44e81e63a26';
   password_connor: string = '31672fd92b13150c3b261144d67626552e4f75c9';
-  password: string;
 
   ngAfterViewInit() {
     setTimeout(() => {

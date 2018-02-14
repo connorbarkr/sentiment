@@ -1,13 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class='title' [@visible]="titleIsVisible">SENTIMENT</div>
 
-<span *ngIf="!authed" class="password" [@visible]="passwordIsVisible">
-  <input (keyup.enter)="authenticate(password)" [(ngModel)]="password" type="password" />
-</span>
+<ng-container *ngIf="!authed">
+  <input class="password" [@visible]="passwordIsVisible" (keyup.enter)="authenticate(password)" [(ngModel)]="password" type="password" />
+</ng-container>
 
-<span *ngIf="authed">
+<ng-container *ngIf="authed">
   <app-notes [user]="authedUser"></app-notes>
-</span>
+</ng-container>
 
 <div class='footer' [@visible]="footerIsVisible">
   <p>© <a href="https://github.com/connorbarkr">Connor Barker</a> 2018. Made with love.</p>
