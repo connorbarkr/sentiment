@@ -26,8 +26,8 @@ export class AppComponent {
   noteIsVisible: string = 'hidden';
   authed: boolean = false;
   authedUser: string = '';
-  password_rea: string = 'db0664b1685e89476f4ed9f6d2e8d16ade3274e4';
-  password_connor: string = 'e4e772472093b48e8ee481684c0b59d92aaf0daa';
+  password_rea: string = '794bfa57bb763388d961a98aa5b9f44e81e63a26';
+  password_connor: string = '31672fd92b13150c3b261144d67626552e4f75c9';
 
   ngAfterViewInit() {
     setTimeout(() => {
